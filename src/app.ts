@@ -6,6 +6,7 @@ import morgan from "morgan"
 import userRoutes from "./routes/user.routes"
 import boardRoutes from "./routes/board.routes"
 import columnRoutes from "./routes/column.routes"
+import taskRoutes from "./routes/task.routes"
 
 dotenv.config()
 const app = express()
@@ -22,6 +23,7 @@ app.use( express.urlencoded({extended: false}) )
 app.use(userRoutes)
 app.use(boardRoutes)
 app.use(columnRoutes)
+app.use(taskRoutes)
 app.get( '/', (_req: Request, res: Response) => {
     res.status(200).send("API RUNNING OK")
 })
